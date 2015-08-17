@@ -6,6 +6,12 @@
 ;;----------------------------------------------------------------------------
 ;; Which functionality to enable (use t or nil for true and false)
 ;;----------------------------------------------------------------------------
+
+(defvar chinese-meta-header "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">")
+(defun insert-chinese-meta-header ()
+  (interactive)
+  (insert chinese-meta-header))
+(global-set-key "\C-c\C-h\C-h" 'insert-chinese-meta-header)
 (setq *macbook-pro-support-enabled* t)
 (setq *is-a-mac* (eq system-type 'darwin))
 (setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
